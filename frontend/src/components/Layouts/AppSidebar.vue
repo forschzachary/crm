@@ -73,7 +73,7 @@
         :label="__('Newsletters')"
         :isCollapsed="isSidebarCollapsed"
         class="mx-2 my-[1.5px]"
-        @click="openListmonk"
+        :to="'Newsletters'"
       >
         <template #icon>
           <FeatherIcon name="mail" class="h-4 w-4" />
@@ -83,7 +83,7 @@
         :label="__('Social')"
         :isCollapsed="isSidebarCollapsed"
         class="mx-2 my-[1.5px]"
-        @click="openPostiz"
+        :to="'Social'"
       >
         <template #icon>
           <FeatherIcon name="share-2" class="h-4 w-4" />
@@ -231,13 +231,6 @@ const { getPinnedViews, getPublicViews } = viewsStore()
 const { toggle: toggleNotificationPanel } = notificationsStore()
 const { capture } = useTelemetry()
 
-const openListmonk = () => {
-  window.location.href = '/listmonk'
-}
-
-const openPostiz = () => {
-  window.location.href = '/postiz'
-}
 const { clearDemoData, isDemoDataCreated } = useDemoData()
 const { send } = useBroadcast()
 

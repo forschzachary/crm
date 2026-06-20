@@ -19,6 +19,16 @@ const routes = [
     component: () => import('@/pages/Dashboard.vue'),
   },
   {
+    path: '/newsletters',
+    name: 'Newsletters',
+    component: () => import('@/pages/Newsletters.vue'),
+  },
+  {
+    path: '/social',
+    name: 'Social',
+    component: () => import('@/pages/Social.vue'),
+  },
+  {
     alias: '/leads',
     path: '/leads/view/:viewType?',
     name: 'Leads',
