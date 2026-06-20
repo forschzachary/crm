@@ -18,6 +18,12 @@ export function initSocket() {
     reconnectionAttempts: 5,
     autoConnect: false,
   })
+  // frappe-ui's realtime resources call socket.connect() to subscribe, which
+  // overrides autoConnect and spams /socket.io/ 404s in this proxy-less deploy.
+  // Neuter connect/open so the socket can never poll; .on/.off/.emit still work
+  // (they just no-op), so no caller breaks. Drop these once /socket.io/ is routed.
+  socket.connect = () => socket
+  socket.open = () => socket
   socket.on('refetch_resource', (data) => {
     if (data.cache_key) {
       let resource =
