@@ -68,6 +68,17 @@
           </nav>
         </Section>
       </div>
+      <div class="mx-2 my-1.5" />
+      <SidebarLink
+        :label="__('Newsletters')"
+        :isCollapsed="isSidebarCollapsed"
+        class="mx-2 my-[1.5px]"
+        @click="openListmonk"
+      >
+        <template #icon>
+          <FeatherIcon name="mail" class="h-4 w-4" />
+        </template>
+      </SidebarLink>
     </div>
     <div class="m-2 flex flex-col gap-1">
       <div class="flex flex-col gap-2 mb-1">
@@ -209,6 +220,10 @@ import { ref, reactive, computed, markRaw, onMounted } from 'vue'
 const { getPinnedViews, getPublicViews } = viewsStore()
 const { toggle: toggleNotificationPanel } = notificationsStore()
 const { capture } = useTelemetry()
+
+const openListmonk = () => {
+  window.location.href = '/listmonk'
+}
 const { clearDemoData, isDemoDataCreated } = useDemoData()
 const { send } = useBroadcast()
 
