@@ -90,7 +90,7 @@
         </template>
       </SidebarLink>
       <SidebarLink
-        :label="__('Team Rooms')"
+        :label="__('Gameplan')"
         :isCollapsed="isSidebarCollapsed"
         class="mx-2 my-[1.5px]"
         @click="openTeamRooms"
@@ -120,7 +120,7 @@
         </template>
       </SidebarLink>
       <SidebarLink
-        :label="__('Rowboat')"
+        :label="__('AI Assistant')"
         :isCollapsed="isSidebarCollapsed"
         class="mx-2 my-[1.5px]"
         :to="'Rowboat'"
