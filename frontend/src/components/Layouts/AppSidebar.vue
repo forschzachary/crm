@@ -93,7 +93,7 @@
         :label="__('Team Rooms')"
         :isCollapsed="isSidebarCollapsed"
         class="mx-2 my-[1.5px]"
-        :to="'TeamRooms'"
+        @click="openTeamRooms"
       >
         <template #icon>
           <FeatherIcon name="message-square" class="h-4 w-4" />
@@ -271,6 +271,12 @@ import { ref, reactive, computed, markRaw, onMounted } from 'vue'
 const { getPinnedViews, getPublicViews } = viewsStore()
 const { toggle: toggleNotificationPanel } = notificationsStore()
 const { capture } = useTelemetry()
+
+// Team Rooms = full-page nav to Gameplan (same-bench, same-origin); Gameplan owns the
+// whole viewport (no nested CRM sidebar). A "← CRM" button in Gameplan returns here.
+const openTeamRooms = () => {
+  window.location.href = '/g'
+}
 
 const { clearDemoData, isDemoDataCreated } = useDemoData()
 const { send } = useBroadcast()
