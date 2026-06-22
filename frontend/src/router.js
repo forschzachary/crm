@@ -29,6 +29,11 @@ const routes = [
     component: () => import('@/pages/Social.vue'),
   },
   {
+    path: '/teamrooms',
+    name: 'TeamRooms',
+    component: () => import('@/pages/TeamRooms.vue'),
+  },
+  {
     alias: '/leads',
     path: '/leads/view/:viewType?',
     name: 'Leads',

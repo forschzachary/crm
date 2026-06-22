@@ -89,6 +89,16 @@
           <FeatherIcon name="share-2" class="h-4 w-4" />
         </template>
       </SidebarLink>
+      <SidebarLink
+        :label="__('Team Rooms')"
+        :isCollapsed="isSidebarCollapsed"
+        class="mx-2 my-[1.5px]"
+        :to="'TeamRooms'"
+      >
+        <template #icon>
+          <FeatherIcon name="message-square" class="h-4 w-4" />
+        </template>
+      </SidebarLink>
     </div>
     <div class="m-2 flex flex-col gap-1">
       <div class="flex flex-col gap-2 mb-1">
