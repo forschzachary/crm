@@ -44,6 +44,11 @@ const routes = [
     component: () => import('@/pages/FullscreenChat.vue'),
   },
   {
+    path: '/rowboat',
+    name: 'Rowboat',
+    component: () => import('@/pages/Rowboat.vue'),
+  },
+  {
     alias: '/leads',
     path: '/leads/view/:viewType?',
     name: 'Leads',
