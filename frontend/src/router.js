@@ -49,6 +49,11 @@ const routes = [
     component: () => import('@/pages/Rowboat.vue'),
   },
   {
+    path: '/apps',
+    name: 'Apps',
+    component: () => import('@/pages/AppMap.vue'),
+  },
+  {
     alias: '/leads',
     path: '/leads/view/:viewType?',
     name: 'Leads',
