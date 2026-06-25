@@ -34,17 +34,6 @@ const routes = [
     component: () => import('@/pages/TeamRooms.vue'),
   },
   {
-    path: '/agent-builder',
-    name: 'AgentBuilder',
-    component: () => import('@/pages/AgentBuilder.vue'),
-  },
-  {
-    path: '/agent-builder/:agentId',
-    name: 'AgentDetailView',
-    component: () => import('@/pages/AgentDetailView.vue'),
-    props: true,
-  },
-  {
     path: '/chat',
     name: 'FullscreenChat',
     component: () => import('@/pages/FullscreenChat.vue'),
@@ -58,6 +47,11 @@ const routes = [
     path: '/apps',
     name: 'Apps',
     component: () => import('@/pages/AppMap.vue'),
+  },
+  {
+    path: '/agents/:agentId',
+    name: 'AgentDetail',
+    component: () => import('@/pages/AgentDetail.vue'),
   },
   {
     alias: '/leads',

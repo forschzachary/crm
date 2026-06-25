@@ -103,7 +103,7 @@
         :label="__('Agent Builder')"
         :isCollapsed="isSidebarCollapsed"
         class="mx-2 my-[1.5px]"
-        :to="'AgentBuilder'"
+        :to="{ name: 'AgentDetail', params: { agentId: 'shelby' } }"
       >
         <template #icon>
           <FeatherIcon name="tool" class="h-4 w-4" />
