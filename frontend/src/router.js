@@ -54,6 +54,11 @@ const routes = [
     component: () => import('@/pages/AppMap.vue'),
   },
   {
+    path: '/agents/:agentId',
+    name: 'AgentDetail',
+    component: () => import('@/pages/AgentDetail.vue'),
+  },
+  {
     alias: '/leads',
     path: '/leads/view/:viewType?',
     name: 'Leads',
