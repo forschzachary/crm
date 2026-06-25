@@ -39,6 +39,12 @@ const routes = [
     component: () => import('@/pages/AgentBuilder.vue'),
   },
   {
+    path: '/agent-builder/:agentId',
+    name: 'AgentDetailView',
+    component: () => import('@/pages/AgentDetailView.vue'),
+    props: true,
+  },
+  {
     path: '/chat',
     name: 'FullscreenChat',
     component: () => import('@/pages/FullscreenChat.vue'),
