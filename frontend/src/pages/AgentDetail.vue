@@ -168,7 +168,15 @@ async function postJSON(path, body) {
 
 async function loadConfig() {
   const d = await getJSON(`agent_config.get?agent_id=${encodeURIComponent(agentId)}`)
-  if (d.ok === false) { error.value = d.error || 'Failed to load config'; return }
+  // "unknown agent" is a blank slate — not an error. Initialize empty form.
+  if (d.ok === false) {
+    if (d.error && d.error.startsWith('unknown agent')) {
+      form.value = { model: '', instruction: '', tools: [] }
+      original.value = JSON.parse(JSON.stringify(form.value))
+      return
+    }
+    error.value = d.error || 'Failed to load config'; return
+  }
   const a = d.agent || {}
   form.value = {
     model: a.model || '',
