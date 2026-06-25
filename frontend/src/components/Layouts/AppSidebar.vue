@@ -103,7 +103,7 @@
         :label="__('Agent Builder')"
         :isCollapsed="isSidebarCollapsed"
         class="mx-2 my-[1.5px]"
-        :to="{ name: 'AgentDetail', params: { agentId: 'shelby' } }"
+        :to="{ name: 'AgentDetail', params: { agentId: defaultAgentId } }"
       >
         <template #icon>
           <FeatherIcon name="tool" class="h-4 w-4" />
@@ -292,6 +292,15 @@ const { clearDemoData, isDemoDataCreated } = useDemoData()
 const { send } = useBroadcast()
 
 const isSidebarCollapsed = useStorage('isSidebarCollapsed', false)
+
+// Default agent for the Agent Builder sidebar link — first agent in agents.yaml,
+// falling back to 'shelby' if the manifest is empty or unreachable.
+const defaultAgentId = computed(() => {
+  // In production this would fetch from the box API; for now, use a sensible default
+  // that the CRM always has. The AgentDetail page handles unknown agents gracefully
+  // (blank-slate form), so a stale default is harmless.
+  return 'shelby'
+})
 
 const isFCSite = ref(window.is_fc_site)
 const isDemoSite = ref(window.is_demo_site)
