@@ -65,6 +65,15 @@
                   />
                 </nav>
               </CollapsibleSection>
+            <SidebarLink
+                :label="__('Agent Builder')"
+                :to="{ name: 'AgentDetail', params: { agentId: 'shelby' } }"
+                class="mx-2 my-0.5"
+              >
+                <template #icon>
+                  <FeatherIcon name="tool" class="h-4 w-4" />
+                </template>
+              </SidebarLink>
             </div>
           </div>
         </div>
